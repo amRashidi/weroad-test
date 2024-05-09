@@ -1,0 +1,68 @@
+.app {
+  &_header  {
+    @apply flex justify-between items-center px-6 lg:px-9 h-14 lg:h-20 w-full border-b border-b-gray-100 mb-4;
+    &_logo {
+      @apply text-primary lg:text-lg font-semibold uppercase italic;
+    }
+    &_nav  {
+      @apply grow;
+    }
+    &_list {
+      @apply  flex justify-end items-center gap-4; 
+      &_item {
+        @apply px-3;
+      }
+      &_link {
+        @apply text-sm lg:text-base font-medium;
+        &.router-link-active {
+          @apply text-primary;
+        }
+      }
+  
+    }
+  }
+  &_main {
+    @apply lg:mb-12;
+    &_container {
+      @apply container;
+    }
+    &_grid {
+      @apply bg-gray-50 py-6;
+      &_wrapper {
+        @apply flex items-stretch w-full;
+      }
+    }
+    &_sidebar {
+      @apply shrink-0 grow-0 w-1/4 mr-4;
+    }
+    &_box {
+      @apply shrink-0 w-full lg:w-3/4;
+    }
+  }
+  &_navigate {
+    @apply container mb-4;
+    &_box {
+      @apply flex justify-between py-4;
+      &:not(.app_navigate--shrink) {
+        @apply flex-col lg:flex-row;
+      }
+    }
+    &_title {
+      @apply text-xl font-semibold;
+    }
+    &_subtitle {
+      @apply text-sm font-light;
+    }
+  }
+  &_footer {
+    @apply flex justify-between items-center px-9 h-4 w-full text-xs py-4 leading-6;
+  }
+}
+body {
+  #__nuxt {
+    @apply h-screen;
+  }
+  &:has(.v-modal_backdrop) {
+    @apply overflow-hidden ;
+  }
+}
